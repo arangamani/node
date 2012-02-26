@@ -173,7 +173,7 @@ pkg: $(PKG)
 
 $(PKG):
 	-rm -rf $(PKGDIR)
-	$(WAF) configure --prefix=/usr/local --without-snapshot --dest-cpu=ia32
+	$(WAF) configure --prefix=/usr --without-snapshot --dest-cpu=ia32
 	CFLAGS=-m32 DESTDIR=$(PKGDIR) $(WAF) install
 	$(packagemaker) \
 		--id "org.nodejs.NodeJS-$(VERSION)" \
